@@ -1,0 +1,54 @@
+# E-Commerce Backend
+
+This is a backend for a simple **e-commerce app** built with **Node.js, Express, TypeScript, and MongoDB**.  
+It lets you create products, associate them with categories, update details, and fetch products with filters and search.
+
+---
+
+## Features
+
+- Create products with name, description, price, discount, image, status, and **auto-generated product code**.  
+- Update product `status`, `description`, and `discount`.  
+- Search products by name and filter by category.  
+- Calculates **final price after discount** for all products.  
+- Product codes are unique and generated based on the product name.
+
+---
+
+## Tech Used
+
+- Node.js & Express  
+- TypeScript  
+- MongoDB & Mongoose  
+- Cloudinary (image upload)  
+- Multer (file upload)
+
+---
+
+## Database Diagram
+
+![ER Diagram](https://i.ibb.co.com/Rk1qJZ59/er-diagram.png)
+
+---
+
+## Run the Project
+
+1. Clone the repo:
+
+```bash
+git clone <your_repo_url>
+cd backend-ecommerce
+npm install
+
+set your .env:
+PORT=5000
+DB_URL=<your_mongodb_uri>
+CLOUDINARY_CLOUD_NAME=<cloud_name>
+CLOUDINARY_API_KEY=<api_key>
+CLOUDINARY_API_SECRET=<api_secret>
+
+run the project:
+npm run dev
+
+
+
