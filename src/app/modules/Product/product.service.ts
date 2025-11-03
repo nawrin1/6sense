@@ -5,7 +5,7 @@ import { TProduct } from './product.interface'
 import { Product } from './product.model'
 
 
-
+//create product into db
 const createProductIntoDB = async (
   file: any,
   productData: Partial<TProduct>,
@@ -28,6 +28,7 @@ const createProductIntoDB = async (
 
   return Product.create(productWithCode)
 }
+//get product from db, filter, search, discount calculation
 const getProductFromDB = async (
  query:Record<string, unknown>
 ) => {

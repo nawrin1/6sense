@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(cors())
 
 //routes
-app.use('/api/v1', router);
+app.use('/api/v1', router)
 
 const test = async (req: Request, res: any) => {
   res.status(200).json({
@@ -21,7 +21,8 @@ const test = async (req: Request, res: any) => {
 
 app.get('/', test)
 
-app.use(globalErrorHandler);
+//error handling middleware
+app.use(globalErrorHandler)
 
-app.use(notFound);
+app.use(notFound)
 export default app

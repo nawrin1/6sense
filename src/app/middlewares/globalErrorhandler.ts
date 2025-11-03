@@ -73,7 +73,7 @@ const globalErrorHandler:ErrorRequestHandler = (
 
 
 
-  //ultimate retuen
+ 
   return res.status(statusCode).json({
     success: false,
     message,
