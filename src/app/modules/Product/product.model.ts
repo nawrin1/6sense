@@ -1,6 +1,7 @@
 import { model, Schema } from 'mongoose'
 import { TProduct } from './product.interface'
 import { NextFunction } from 'express';
+import AppError from '../../errors/AppError';
 
 const Productschema = new Schema<TProduct>(
   {
@@ -57,10 +58,13 @@ Productschema.pre<TProduct>('save', async function (next:NextFunction) {
   
 
   const existing = await Product.findOne({ productCode: this.productCode as any});
-  if (existing) {
-    const err = new Error(`Product code "${this.productCode as any}" already exists.`);
-    return next(err);
-  }
+if (existing) {
+  throw new AppError(
+    400,
+    `Product code "${this.productCode}" already exists.`,
+    
+  );
+}
 
   next();
 });
